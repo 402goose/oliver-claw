@@ -1,0 +1,550 @@
+{
+  "meta": {
+    "lastTouchedVersion": "2026.4.9"
+  },
+  "memory": {
+    "backend": "builtin"
+  },
+  "gateway": {
+    "mode": "local",
+    "bind": "lan",
+    "controlUi": {
+      "allowedOrigins": [
+        "https://oliver-claw.up.railway.app",
+        "https://agentic-jack.up.railway.app",
+        "http://localhost:3000",
+        "http://127.0.0.1:3000"
+      ]
+    }
+  },
+  "mcp": {
+    "servers": {
+      "tenet-context": {
+        "command": "tenet-context-hub-mcp",
+        "args": [],
+        "cwd": "/data/tenet",
+        "env": {
+          "TENET_HOME": "/data/tenet"
+        }
+      }
+    }
+  },
+  "agents": {
+    "defaults": {
+      "model": {
+        "primary": "openrouter/openai/gpt-5.5",
+        "fallbacks": [
+          "openrouter/anthropic/claude-opus-4.7",
+          "openrouter/anthropic/claude-opus-4.6",
+          "openrouter/deepseek/deepseek-r1:free",
+          "openrouter/meta-llama/llama-3.3-70b-instruct:free"
+        ]
+      },
+      "models": {
+        "openrouter/openai/gpt-5.5": {
+          "alias": "gpt55",
+          "params": {
+            "cacheRetention": "short"
+          }
+        },
+        "openrouter/anthropic/claude-opus-4.7": {
+          "alias": "opus",
+          "params": {
+            "cacheRetention": "short"
+          }
+        },
+        "openrouter/anthropic/claude-opus-4.6": {
+          "alias": "opus46",
+          "params": {
+            "cacheRetention": "short"
+          }
+        }
+      },
+      "workspace": "/data/workspace",
+      "memorySearch": {
+        "enabled": false
+      },
+      "contextPruning": {
+        "mode": "cache-ttl",
+        "ttl": "1h"
+      },
+      "compaction": {
+        "mode": "safeguard",
+        "maxHistoryShare": 0.4,
+        "recentTurnsPreserve": 4,
+        "qualityGuard": {
+          "enabled": true,
+          "maxRetries": 1
+        },
+        "postIndexSync": "async",
+        "model": "openrouter/anthropic/claude-sonnet-4.6",
+        "memoryFlush": {
+          "enabled": true,
+          "forceFlushTranscriptBytes": "2mb"
+        }
+      },
+      "elevatedDefault": "full",
+      "maxConcurrent": 4,
+      "bootstrapMaxChars": 65000
+    },
+    "list": [
+      {
+        "id": "oliver",
+        "default": true,
+        "workspace": "/data/workspace/oliver",
+        "identity": {
+          "name": "Oliver",
+          "emoji": "🚀"
+        },
+        "groupChat": {
+          "mentionPatterns": [
+            "@oliver",
+            "@Oliver_jbot",
+            "what would oliver think",
+            "oliver's lens",
+            "oliver pov",
+            "oliver,",
+            "oliver:",
+            "oliver?",
+            "oliver.",
+            "Oliver,",
+            "Oliver:",
+            "Oliver?",
+            "Oliver.",
+            " oliver ",
+            " Oliver ",
+            "oliver ",
+            "Oliver ",
+            "@agentic_jackbot",
+            "@deehock_bot",
+            "jack says",
+            "jack asks",
+            "dee says",
+            "dee asks",
+            "you all",
+            "y'all",
+            "yall",
+            "fellas",
+            "agents",
+            "team",
+            "team,",
+            "team:",
+            "everyone",
+            "all of you",
+            "what do you all",
+            "what do agents",
+            "@agents",
+            "@all"
+          ]
+        }
+      }
+    ]
+  },
+  "tools": {
+    "exec": {
+      "security": "full"
+    },
+    "web": {
+      "search": {
+        "enabled": true
+      }
+    },
+    "media": {
+      "image": {
+        "enabled": false
+      },
+      "video": {
+        "enabled": false,
+        "maxBytes": 20971520,
+        "echoTranscript": true,
+        "timeoutSeconds": 120,
+        "models": [
+          {
+            "provider": "openai",
+            "model": "google/gemini-2.0-flash-exp",
+            "baseUrl": "https://openrouter.ai/api/v1"
+          }
+        ],
+        "request": {
+          "auth": {
+            "mode": "authorization-bearer",
+            "token": "${OPENROUTER_API_KEY}"
+          }
+        }
+      },
+      "audio": {
+        "enabled": true,
+        "maxBytes": 26214400,
+        "echoTranscript": true,
+        "timeoutSeconds": 60,
+        "models": [
+          {
+            "provider": "openai",
+            "model": "whisper-large-v3",
+            "baseUrl": "https://api.groq.com/openai/v1"
+          }
+        ],
+        "request": {
+          "auth": {
+            "mode": "authorization-bearer",
+            "token": "${GROQ_API_KEY}"
+          }
+        }
+      }
+    },
+    "elevated": {
+      "enabled": true,
+      "allowFrom": {
+        "telegram": [
+          1512302730,
+          455323659,
+          1186185013,
+          5624006861,
+          302137836,
+          8584047844,
+          5963636803,
+          7307422277,
+          7875184341,
+          5183778423,
+          8760428509,
+          8779899117,
+          7717092203
+        ]
+      }
+    }
+  },
+  "channels": {
+    "telegram": {
+      "enabled": true,
+      "dmPolicy": "open",
+      "groupPolicy": "open",
+      "streaming": "off",
+      "allowFrom": [
+        1512302730,
+        455323659,
+        1186185013,
+        5624006861,
+        302137836,
+        8584047844,
+        5963636803,
+        7307422277,
+        7875184341,
+        5183778423,
+        8760428509,
+        6113572615,
+        8779899117,
+        7717092203
+      ],
+      "groupAllowFrom": [
+        1512302730,
+        455323659,
+        1186185013,
+        5624006861,
+        302137836,
+        8584047844,
+        5963636803,
+        7307422277,
+        7875184341,
+        5183778423,
+        8760428509,
+        6113572615,
+        8779899117,
+        7717092203
+      ],
+      "accounts": {
+        "default": {
+          "dmPolicy": "open",
+          "streaming": "off",
+          "allowFrom": [
+            1512302730,
+            455323659,
+            1186185013,
+            5624006861,
+            302137836,
+            8584047844,
+            5963636803,
+            7307422277,
+            7875184341,
+            5183778423,
+            8760428509,
+            6113572615,
+            8779899117,
+            7717092203
+          ],
+          "groups": {
+            "-50208591": {
+              "groupPolicy": "open",
+              "enabled": true,
+              "allowFrom": [
+                1512302730,
+                455323659,
+                1186185013,
+                5624006861,
+                302137836,
+                8584047844,
+                5963636803,
+                7307422277,
+                7875184341,
+                5183778423,
+                8760428509,
+                6113572615,
+                8779899117,
+                7717092203
+              ],
+              "topics": {
+                "1": {
+                  "agentId": "jack"
+                }
+              },
+              "requireMention": true
+            },
+            "-5262769177": {
+              "groupPolicy": "open",
+              "enabled": true,
+              "allowFrom": [
+                1512302730,
+                455323659,
+                1186185013,
+                5624006861,
+                302137836,
+                8584047844,
+                5963636803,
+                7307422277,
+                7875184341,
+                5183778423,
+                8760428509,
+                6113572615,
+                8779899117,
+                7717092203
+              ],
+              "topics": {
+                "1": {
+                  "agentId": "jack"
+                }
+              },
+              "requireMention": true
+            },
+            "-5180909745": {
+              "groupPolicy": "open",
+              "enabled": true,
+              "allowFrom": [
+                1512302730,
+                455323659,
+                1186185013,
+                5624006861,
+                302137836,
+                8584047844,
+                5963636803,
+                7307422277,
+                7875184341,
+                5183778423,
+                8760428509,
+                6113572615,
+                8779899117,
+                7717092203
+              ],
+              "topics": {
+                "1": {
+                  "agentId": "jack"
+                }
+              },
+              "requireMention": true
+            },
+            "-5020859100": {
+              "groupPolicy": "open",
+              "enabled": true,
+              "allowFrom": [
+                1512302730,
+                455323659,
+                1186185013,
+                5624006861,
+                302137836,
+                8584047844,
+                5963636803,
+                7307422277,
+                7875184341,
+                5183778423,
+                8760428509,
+                6113572615,
+                8779899117,
+                7717092203
+              ],
+              "topics": {
+                "1": {
+                  "agentId": "jack"
+                }
+              },
+              "requireMention": true
+            },
+            "-1003918082481": {
+              "groupPolicy": "open",
+              "enabled": true,
+              "requireMention": true,
+              "allowFrom": [
+                1512302730,
+                455323659,
+                1186185013,
+                5624006861,
+                302137836,
+                8584047844,
+                5963636803,
+                7307422277,
+                7875184341,
+                5183778423,
+                8760428509,
+                6113572615,
+                8779899117,
+                7717092203
+              ],
+              "topics": {
+                "1": {
+                  "agentId": "jack"
+                }
+              }
+            },
+            "-5219962693": {
+              "groupPolicy": "open",
+              "enabled": true,
+              "allowFrom": [
+                1512302730,
+                455323659,
+                1186185013,
+                5624006861,
+                302137836,
+                8584047844,
+                5963636803,
+                7307422277,
+                7875184341,
+                5183778423,
+                8760428509,
+                6113572615,
+                8779899117,
+                7717092203
+              ]
+            },
+            "-5174578302": {
+              "groupPolicy": "open",
+              "enabled": true,
+              "allowFrom": [
+                1512302730,
+                455323659,
+                1186185013,
+                5624006861,
+                302137836,
+                8584047844,
+                5963636803,
+                7307422277,
+                7875184341,
+                5183778423,
+                8760428509,
+                6113572615,
+                8779899117,
+                7717092203
+              ]
+            },
+            "-5150566481": {
+              "groupPolicy": "open",
+              "enabled": true,
+              "allowFrom": [
+                1512302730,
+                455323659,
+                1186185013,
+                5624006861,
+                302137836,
+                8584047844,
+                5963636803,
+                7307422277,
+                7875184341,
+                5183778423,
+                8760428509,
+                6113572615,
+                8779899117,
+                7717092203
+              ]
+            },
+            "-5129979583": {
+              "groupPolicy": "open",
+              "enabled": true,
+              "allowFrom": [
+                1512302730,
+                455323659,
+                1186185013,
+                5624006861,
+                302137836,
+                8584047844,
+                5963636803,
+                7307422277,
+                7875184341,
+                5183778423,
+                8760428509,
+                6113572615,
+                8779899117,
+                7717092203
+              ]
+            },
+            "-5188895608": {
+              "groupPolicy": "open",
+              "enabled": true,
+              "allowFrom": [
+                1512302730,
+                455323659,
+                1186185013,
+                5624006861,
+                302137836,
+                8584047844,
+                5963636803,
+                7307422277,
+                7875184341,
+                5183778423,
+                8760428509,
+                6113572615,
+                8779899117,
+                7717092203
+              ]
+            }
+          }
+        }
+      },
+      "groups": {
+        "*": {
+          "requireMention": true
+        }
+      }
+    }
+  },
+  "messages": {
+    "tts": {
+      "auto": "off"
+    }
+  },
+  "plugins": {
+    "entries": {
+      "openrouter": {
+        "enabled": true
+      },
+      "oc-visa-cli-plugin": {
+        "enabled": true
+      }
+    }
+  },
+  "hooks": {
+    "internal": {
+      "enabled": true,
+      "load": {
+        "extraDirs": [
+          "/data/workspace/oliver/hooks"
+        ]
+      },
+      "entries": {
+        "lurker": {
+          "enabled": true,
+          "env": {
+            "LURKER_ROOM_ALLOWLIST": "-5020859100,-50208591,-5180909745,-5262769177",
+            "LURKER_SELF_BOT_ID": "8664156193",
+            "LURKER_DB": "/data/tenet/.tenet/memory.db"
+          }
+        }
+      }
+    }
+  }
+}

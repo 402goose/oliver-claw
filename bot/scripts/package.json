@@ -1,0 +1,16 @@
+{
+  "name": "dee-hock-bot-scripts",
+  "version": "0.1.0",
+  "description": "OpenRouter embedding pipeline + custom MCP retrieval for the Dee Hock corpus",
+  "type": "module",
+  "private": true,
+  "dependencies": {
+    "better-sqlite3": "^11.5.0",
+    "sqlite-vec": "^0.1.6",
+    "@modelcontextprotocol/sdk": "^1.0.0"
+  },
+  "scripts": {
+    "embed": "node embed-corpus.mjs",
+    "mcp": "node corpus-search-mcp.mjs"
+  }
+}

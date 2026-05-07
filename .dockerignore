@@ -1,0 +1,8 @@
+# Build context exclusions. Notably we DO want bot/youtube-cookies.txt
+# (gitignored but needed at build time for intel.sh's YouTube cookie path).
+.git
+.tenet
+node_modules
+*.log
+.env.local
+.DS_Store

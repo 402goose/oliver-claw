@@ -1,0 +1,6 @@
+# Netscape HTTP Cookie File
+# placeholder — replace with real cookies before `railway up` to enable YouTube
+# in intel.sh. Export via the "Get cookies.txt LOCALLY" Chrome extension on a
+# tab signed in to youtube.com, or run locally:
+#   yt-dlp --cookies-from-browser chrome --cookies cookies.txt --skip-download https://www.youtube.com
+# This file is gitignored. Cookies expire ~30 days; refresh + redeploy as needed.
