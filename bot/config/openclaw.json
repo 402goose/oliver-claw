@@ -43,7 +43,7 @@
         "every": "4h",
         "model": "openrouter/meta-llama/llama-3.3-70b-instruct:free",
         "prompt": "Read HEARTBEAT.md if present. If nothing needs attention, reply HEARTBEAT_OK only.",
-        \"bootstrapMaxChars\": 8000
+        "bootstrapMaxChars": 8000
       },
       "thinkingDefault": "off",
       "bootstrapMaxChars": 25000,
@@ -100,8 +100,7 @@
         }
       },
       "elevatedDefault": "full",
-      "maxConcurrent": 4,
-      "bootstrapMaxChars": 65000
+      "maxConcurrent": 4
     },
     "list": [
       {
@@ -110,7 +109,7 @@
         "workspace": "/data/workspace/oliver",
         "identity": {
           "name": "Oliver",
-          "emoji": "🚀"
+          "emoji": "\ud83d\ude80"
         },
         "groupChat": {
           "mentionPatterns": [
