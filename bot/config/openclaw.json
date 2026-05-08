@@ -42,10 +42,11 @@
       "heartbeat": {
         "every": "4h",
         "model": "openrouter/meta-llama/llama-3.3-70b-instruct:free",
-        "prompt": "Read HEARTBEAT.md if present. If nothing needs attention, reply HEARTBEAT_OK only."
+        "prompt": "Read HEARTBEAT.md if present. If nothing needs attention, reply HEARTBEAT_OK only.",
+        \"bootstrapMaxChars\": 8000
       },
       "thinkingDefault": "off",
-      "bootstrapMaxChars": 5000,
+      "bootstrapMaxChars": 25000,
       "models": {
         "openrouter/anthropic/claude-sonnet-4.6": {
           "alias": "sonnet46",
