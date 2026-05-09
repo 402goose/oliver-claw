@@ -42,8 +42,7 @@
       "heartbeat": {
         "every": "4h",
         "model": "openrouter/meta-llama/llama-3.3-70b-instruct:free",
-        "prompt": "Read HEARTBEAT.md if present. If nothing needs attention, reply HEARTBEAT_OK only.",
-        "bootstrapMaxChars": 8000
+        "prompt": "Read HEARTBEAT.md if present. If nothing needs attention, reply HEARTBEAT_OK only."
       },
       "thinkingDefault": "off",
       "bootstrapMaxChars": 25000,
