@@ -91,7 +91,7 @@
         "openai/gpt-5.5": {
           "alias": "gpt55",
           "params": {
-            "maxTokens": 4000
+            "maxCompletionTokens": 4000
           }
         }
       },
@@ -128,7 +128,7 @@
         "workspace": "/data/workspace/oliver",
         "identity": {
           "name": "Oliver",
-          "emoji": "\ud83d\ude80"
+          "emoji": "🚀"
         },
         "groupChat": {
           "mentionPatterns": [
