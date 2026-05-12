@@ -573,6 +573,13 @@
             "LURKER_SELF_BOT_ID": "8664156193",
             "LURKER_DB": "/data/tenet/.tenet/memory.db"
           }
+        },
+        "voice-sampler": {
+          "enabled": true,
+          "env": {
+            "VOICE_SAMPLER_SPAWN_URL": "http://spawn-salon.railway.internal:8080",
+            "VOICE_SAMPLER_BOT_SLUG": "oliver"
+          }
         }
       }
     }
