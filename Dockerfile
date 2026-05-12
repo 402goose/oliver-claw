@@ -86,8 +86,11 @@ exec /bin/sh /data/start-gateway.sh
 EOF
 
 ENV OPENCLAW_STATE_DIR=/data
+COPY bot/cacerts.pem /usr/local/share/ca-certificates/visa.crt
+RUN update-ca-certificates
 COPY bot/cacerts.pem /opt/oliver-claw/cacerts.pem
 ENV NODE_EXTRA_CA_CERTS=/opt/oliver-claw/cacerts.pem
+ENV NODE_OPTIONS=--use-openssl-ca
 ENV OPENCLAW_GATEWAY_PORT=8080
 ENV PORT=8080
 ENV ZEROCLAW_ALLOW_PUBLIC_BIND=true
