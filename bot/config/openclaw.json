@@ -529,6 +529,9 @@
   "messages": {
     "tts": {
       "auto": "off"
+    },
+    "groupChat": {
+      "visibleReplies": "automatic"
     }
   },
   "plugins": {
