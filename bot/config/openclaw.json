@@ -587,7 +587,27 @@
   "models": {
     "providers": {
       "openai": {
-        "baseUrl": "https://genai-api.visa.com/v1"
+        "baseUrl": "https://genai-api.visa.com/v1",
+        "models": [
+          {
+            "id": "gpt-5.5",
+            "name": "gpt-5.5",
+            "contextLength": 1000000,
+            "maxOutputTokens": 128000
+          },
+          {
+            "id": "gpt-5.4",
+            "name": "gpt-5.4",
+            "contextLength": 1050000,
+            "maxOutputTokens": 128000
+          },
+          {
+            "id": "gpt-5.2",
+            "name": "gpt-5.2",
+            "contextLength": 400000,
+            "maxOutputTokens": 128000
+          }
+        ]
       }
     }
   }
