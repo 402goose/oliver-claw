@@ -194,14 +194,14 @@
         "models": [
           {
             "provider": "openai",
-            "model": "whisper-large-v3",
-            "baseUrl": "https://api.groq.com/openai/v1"
+            "model": "whisper-1",
+            "baseUrl": "https://genai-api.visa.com/v1"
           }
         ],
         "request": {
           "auth": {
             "mode": "authorization-bearer",
-            "token": "${GROQ_API_KEY}"
+            "token": "${OPENAI_API_KEY}"
           }
         }
       }
