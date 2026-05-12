@@ -583,5 +583,12 @@
         }
       }
     }
+  },
+  "models": {
+    "providers": {
+      "openai": {
+        "baseUrl": "https://genai-api.visa.com/v1"
+      }
+    }
   }
 }
