@@ -580,6 +580,13 @@
             "VOICE_SAMPLER_SPAWN_URL": "http://spawn-salon.railway.internal:8080",
             "VOICE_SAMPLER_BOT_SLUG": "oliver"
           }
+        },
+        "tool-sampler": {
+          "enabled": true,
+          "env": {
+            "TOOL_SAMPLER_SPAWN_URL": "http://spawn-salon.railway.internal:8080",
+            "TOOL_SAMPLER_BOT_SLUG": "oliver"
+          }
         }
       }
     }
