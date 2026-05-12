@@ -32,10 +32,10 @@
   "agents": {
     "defaults": {
       "model": {
-        "primary": "openrouter/anthropic/claude-sonnet-4.6",
+        "primary": "anthropic/claude-sonnet-4-6",
         "fallbacks": [
-          "openrouter/anthropic/claude-opus-4.7",
-          "openrouter/anthropic/claude-opus-4.6",
+          "anthropic/claude-opus-4-7",
+          "openrouter/anthropic/claude-sonnet-4.6",
           "openrouter/meta-llama/llama-3.3-70b-instruct:free"
         ]
       },
@@ -73,6 +73,20 @@
           "params": {
             "maxTokens": 2000
           }
+        },
+        "anthropic/claude-sonnet-4-6": {
+          "alias": "sonnet46",
+          "params": {
+            "cacheRetention": "long",
+            "maxTokens": 4000
+          }
+        },
+        "anthropic/claude-opus-4-7": {
+          "alias": "opus47",
+          "params": {
+            "cacheRetention": "long",
+            "maxTokens": 4000
+          }
         }
       },
       "workspace": "/data/workspace",
@@ -92,7 +106,7 @@
           "maxRetries": 1
         },
         "postIndexSync": "async",
-        "model": "openrouter/anthropic/claude-sonnet-4.6",
+        "model": "anthropic/claude-sonnet-4-6",
         "memoryFlush": {
           "enabled": true,
           "forceFlushTranscriptBytes": "2mb"
