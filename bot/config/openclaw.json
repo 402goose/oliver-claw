@@ -46,7 +46,7 @@
         "prompt": "Read HEARTBEAT.md if present. If nothing needs attention, reply HEARTBEAT_OK only."
       },
       "thinkingDefault": "off",
-      "bootstrapMaxChars": 25000,
+      "bootstrapMaxChars": 50000,
       "models": {
         "openrouter/anthropic/claude-sonnet-4.6": {
           "alias": "sonnet46",
