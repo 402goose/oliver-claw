@@ -42,7 +42,7 @@
       },
       "heartbeat": {
         "every": "4h",
-        "model": "openrouter/meta-llama/llama-3.3-70b-instruct:free",
+        "model": "openrouter/google/gemini-2.5-flash",
         "prompt": "Read HEARTBEAT.md if present. If nothing needs attention, reply HEARTBEAT_OK only."
       },
       "thinkingDefault": "off",
